@@ -1,14 +1,9 @@
 import { Stack, usePathname, useSegments } from "expo-router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, Text } from "react-native";
 
 export default () => {
   const [isReady, setIsReady] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setIsReady(true);
-    }, 10000);
-  }, []);
 
   console.log({ segments: useSegments(), pathname: usePathname() });
   if (!isReady) {
